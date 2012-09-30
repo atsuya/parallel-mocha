@@ -1,0 +1,28 @@
+{
+    "name": "parallel-mocha"
+  , "version": "0.0.1"
+  , "description": "run tests for mocha in parallel"
+  , "keywords": ["mocha", "parallel test"]
+  , "author": {
+        "name": "Atsuya Takagi"
+      , "email": "atsuya.takagi@gmail.com"
+    }
+  , "repository": {
+        "type": "git"
+      , "url": "git://github.com/atsuya/parallel-mocha.git"
+    }
+  , "main": "./index"
+  , "bin": { "parallel-mocha": "./bin/parallel-mocha" }
+  , "engines": {
+      "node": "0.8.11"
+    }
+  , "dependencies": {
+        "mocha": "~1.4.2"
+      , "should": "~1.1.0"
+    }
+  , "devDependencies": {
+    }
+  , "scripts": {
+        "test": "make"
+    }
+}
