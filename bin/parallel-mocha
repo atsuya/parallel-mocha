@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+  , fs = require('fs');
+
+var Runner = require('../lib/runner');
+
+program
+  .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
+  .usage('[options] <files...>')
+  .option('-p, --processes <n>', 'Set number of processes', parseInt)
+  .parse(process.argv);
+
+// TODO: how can i make sure workers is integer?
+var processes = program.processes;
+var files = program.args
+
+console.log('processes: %d', processes);
+console.log('files:');
+console.log(files);
+
+var runner = new Runner(files, { processes: processes });
+runner.run(function() {
+  console.log('done!!!!!!!!!!!!!');
+});
