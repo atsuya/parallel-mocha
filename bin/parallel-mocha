@@ -20,6 +20,10 @@ console.log('files:');
 console.log(files);
 
 var runner = new Runner(files, { processes: processes });
-runner.run(function() {
-  console.log('done!!!!!!!!!!!!!');
+runner.run(function(error) {
+  if (error) {
+    console.log('==== Failed: %s', error.message);
+  } else {
+    console.log('==== Pass!');
+  }
 });
