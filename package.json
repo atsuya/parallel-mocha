@@ -1,6 +1,6 @@
 {
     "name": "parallel-mocha"
-  , "version": "0.0.4"
+  , "version": "0.0.5"
   , "description": "run tests for mocha in parallel"
   , "keywords": ["mocha", "parallel test"]
   , "author": {
@@ -22,7 +22,6 @@
       , "underscore": "1.4.0"
       , "done-criteria": "0.0.3"
       , "commander": "1.0.4"
-      , "s": "~0.1.1"
     }
   , "devDependencies": {
     }
