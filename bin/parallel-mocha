@@ -12,12 +12,8 @@ program
   .parse(process.argv);
 
 // TODO: how can i make sure workers is integer?
-var processes = program.processes;
+var processes = program.processes || 2;
 var files = program.args
-
-console.log('processes: %d', processes);
-console.log('files:');
-console.log(files);
 
 var runner = new Runner(files, { processes: processes });
 runner.run(function(error) {
