@@ -1,6 +1,6 @@
 {
     "name": "parallel-mocha"
-  , "version": "0.0.5"
+  , "version": "0.0.6"
   , "description": "run tests for mocha in parallel"
   , "keywords": ["mocha", "parallel test"]
   , "author": {
@@ -14,7 +14,7 @@
   , "main": "./index"
   , "bin": { "parallel-mocha": "./bin/parallel-mocha" }
   , "engines": {
-      "node": "0.8.11"
+      "node": "~0.8.0"
     }
   , "dependencies": {
         "mocha": "1.5.0"
