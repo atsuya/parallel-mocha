@@ -14,4 +14,7 @@ run tests for mocha in parallel
 ```
 
 ## Options
-
+```shell
+    --timeout set test-case timeout in milliseconds
+    --slow slow test threshold in milliseconds
+```
