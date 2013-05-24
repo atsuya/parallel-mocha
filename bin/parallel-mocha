@@ -9,13 +9,23 @@ program
   .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
   .usage('[options] <files...>')
   .option('-p, --processes <n>', 'Set number of processes', parseInt)
+  .option('-t, --timeout <n>', 'Timeout between testes', parseInt)
+  .option('-s, --slow <n>', 'Wait for slow tests', parseInt)
   .parse(process.argv);
 
+
 // TODO: how can i make sure workers is integer?
-var processes = program.processes || 2;
+var processes = program.processes || 20;
+var timeout = program.timeout || 300000;
+var slow = program.slow || 230000;
 var files = program.args
 
-var runner = new Runner(files, { processes: processes });
+var runner = new Runner(files, {
+ processes: processes,
+ timeout: timeout,
+ slow: slow
+});
+
 runner.run(function(error) {
   if (error) {
     console.log('==== Failed: %s', error.message);
